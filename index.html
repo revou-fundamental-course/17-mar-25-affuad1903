@@ -6,26 +6,68 @@
     <title>Katik - By Affandi Putra Pradana</title>
 
     <!-- CSS External -->
-    <link rel="stylesheet" href="css\style.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 <body>
     <!-- Header -->
-    <header>
-
+    <header class="header">
+        <section>
+            <img src="assets/img/logo.png" alt="Logo Katik" class="logo">
+            <div>
+                <h1>KaTik</h1>
+                <span class="headerSpan">Kalkulator Matematik</span>
+            </div>
+        </section>
+        <p class="author">By Affandi Putra Pradana</p>
     </header>
+    <!-- /Header -->
 
     <!-- Main Content -->
     <main>
+        <!-- Section Welcome -->
+        <section class="welcome">
+            <div class="welcomeContainer">
+                <header>
+                    <h2 class="welcomeTitle">Selamat Datang Di Katik</h2>
+                </header>
+                <p class="welcomeDesc">Halo, selamat datang di Katik! Sebuah aplikasi web sederhana yang membantu Anda menghitung luas dan keliling persegi dan persegi panjang dengan cepat, mudah, dan akurat. Cocok untuk pelajar, mahasiswa, atau siapa saja yang ingin melakukan perhitungan geometris dengan lebih praktis!</p>
 
+                <!-- Fiture Navigation -->
+                <div class="fitureNav">
+                    <a id="buttonPersegi" href="#persegi" class="nav-fiture-non-active" onclick="persegi(this)">Persegi</a>
+                    <a id="buttonPersegiPanjang" href="#persegiPanjang" class="nav-fiture-non-active" onclick="persegiPanjang(this)">Persegi Panjang</a>
+                </div>
+                <!-- /Fiture Navigation -->
+            </div>
+            <img class="welcomePhoto" src="assets/img/welcome.png" alt="Foto Welcome">
+        </section>
+        <!-- /Section Welcome -->
+        <!-- Section Luas -->
+        <section class="sectionContainer">
+            <header id="persegi">
+                <h2 class="sectionTitle">Persegi</h2>
+            </header>
+        </section>
+        <!-- /Section Luas -->
+
+        <!-- Section Keliling -->
+        <section class="sectionContainer">
+            <header id="persegiPanjang">
+                <h2 class="sectionTitle">Persegi Panjang</h2>
+            </header>
+        </section>
+        <!-- /Section Persegi -->
     </main>
+    <!-- /Main Content -->
 
     <!-- Footer -->
     <footer>
 
     </footer>
+    <!-- /Footer -->
 
     <!-- JS External -->
-    <script src="js\script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,290 @@
+body{
+    margin: 0px;
+    background-color: rgb(241, 241, 241);
+}
+.header{
+    background-color: #05b2ff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    color: white;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.header section{
+    display: flex;
+    flex: 50%;
+    max-width: 50%;
+    justify-content: flex-start;
+}
+
+
+.author:hover{
+    font-size: 18px;
+    transition: 0.2s;
+}
+h1{
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.logo{
+    object-fit: cover;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+header section div{
+    align-content: center;
+}
+header section div span{
+    font-family: math;
+}
+
+.welcome{
+    margin-top: 40px;
+    margin-right: 50px;
+    margin-left: 50px;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #05b2ff;
+    color: white;
+    border-radius: 50px;
+    padding: 0px 40px;
+}
+.welcome:hover{
+    margin-top: 30px;
+    margin-right: 40px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    transition: 0.2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.welcomePhoto{
+    object-fit: cover;
+    height: 164px;
+}
+.welcomeContainer{
+    padding: 40px;
+}
+.welcomeTitle{
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 0;
+    font-size: 30px;
+    padding: 0px;
+}
+.welcomeDesc{
+    font-family: system-ui;
+    margin-top: 8px;
+}
+.welcomeImg{
+    background-image: url(../assets/img/welcome.png);
+    width: 300px;
+    height: 210px;
+    background-position: center;
+    background-size: cover;
+}
+
+.fitureNav>a{
+    text-align: center;
+    text-decoration: none;
+    border-radius: 18px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 20%;
+    margin: 5px 5px;
+    transition: 0.2s;
+}
+.fitureNav>a:hover{
+    font-size: 18px;
+    transition: 0.2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav-fiture-non-active{
+    background-color: #ffffff;
+    color: #008cc8;
+}
+.nav-fiture-active{
+    background-color: #008cc8;
+    color: #ffffff;
+    font-size: 18px;
+    transition: 0.2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.fitureNav{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.sectionContainer{
+    padding: 4px;
+    background-color: #05b2ff;
+    color: white;
+    text-align-last: center;
+    margin: 20px 50px;
+    border-radius: 50px;
+}
+.sectionTitle{
+    font-family: sans-serif;
+}
+
+
+
+
+
+@media(max-width:946px){
+    .fitureNav>a{
+        width: 50%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .welcomeContainer{
+        padding: 20px;
+    }
+}
+@media(max-width:680px){
+    .welcomeTitle{
+        font-size: 20px;
+    }
+    .welcomeDesc{
+        font-size: 13px;
+    }
+}
+
+@media(max-width:582px){
+    .headerSpan{
+        font-size: 11px;
+    }
+    .fitureNav>a{
+        width: 50%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .welcomeContainer{
+        padding: 20px;
+    }
+    .welcome{
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+        padding: 0px 20px;
+    }
+    .welcome:hover{
+        margin-top: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+
+    .welcomeDesc{
+        font-size: 10px;
+    }
+    .welcomeTitle{
+        font-size: 12px;
+    }
+    .header{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1{
+        font-size: 13px;
+    }
+    .headerSpan{
+        font-size: 10px;
+    }
+    .logo{
+        object-fit: cover;
+        max-width: 40px;
+        max-height: 40px;
+    }
+    .header section{
+        display: flex;
+        flex: 50%;
+        max-width: 50%;
+        justify-content: flex-start;
+    }
+    .author{
+        font-size: 10px;
+    }
+    .author:hover{
+        font-size: 11px;
+    }
+    .fitureNav>a{
+        font-size: 10px;
+    }
+    .fitureNav>a:hover{
+        font-size: 11px;
+    }
+    .sectionContainer{
+        margin: 10px;
+    }
+    .sectionTitle{
+        font-size: 11px;
+    }
+
+}
+@media(max-width:390px){
+    .welcomeDesc{
+        font-size: 9px;
+    }
+    .welcomeTitle{
+        font-size: 11px;
+    }
+    .welcome{
+        padding: 0px 5px;
+        margin-top: 9px;
+        margin-right: 9px;
+        margin-left: 9px;
+    }
+    .welcome:hover{
+        margin-top: 8px;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    .header{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    h1{
+        font-size: 13px;
+    }
+    .headerSpan{
+        font-size: 10px;
+    }
+    .logo{
+        object-fit: cover;
+        max-width: 40px;
+        max-height: 40px;
+    }
+    .header section{
+        display: flex;
+        flex: 50%;
+        max-width: 50%;
+        justify-content: flex-start;
+    }
+    .author{
+        font-size: 10px;
+    }
+    .author:hover{
+        font-size: 11px;
+    }
+    .fitureNav>a{
+        font-size: 9px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .fitureNav>a:hover{
+        font-size: 10px;
+    }
+
+}
+
