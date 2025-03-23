@@ -1,3 +1,4 @@
+// function persegiPanjang(persegiPanjang)
 function persegiPanjang(persegiPanjang){
     const checkNonActivePP = persegiPanjang.classList;
     const checkNonActiveP = document.getElementById("buttonPersegi").classList;
@@ -9,6 +10,8 @@ function persegiPanjang(persegiPanjang){
         checkNonActivePP.replace("nav-fiture-non-active","nav-fiture-active");
     }
 }
+
+// function persegi(persegi)
 function persegi(persegi){
     const checkNonActiveP = persegi.classList;
     const checkNonActivePP = document.getElementById("buttonPersegiPanjang").classList;
@@ -20,4 +23,7 @@ function persegi(persegi){
         checkNonActiveP.replace("nav-fiture-non-active","nav-fiture-active");
     }
 }
+
+// Tahun akan berganti terus
+document.getElementById("year").textContent = new Date().getFullYear();
 

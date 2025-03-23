@@ -62,7 +62,7 @@ header section div span{
     transition: 0.2s;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.welcomePhoto{
+.responsivePhoto{
     object-fit: cover;
     height: 164px;
 }
@@ -79,13 +79,6 @@ header section div span{
 .welcomeDesc{
     font-family: system-ui;
     margin-top: 8px;
-}
-.welcomeImg{
-    background-image: url(../assets/img/welcome.png);
-    width: 300px;
-    height: 210px;
-    background-position: center;
-    background-size: cover;
 }
 
 .fitureNav>a{
@@ -122,18 +115,84 @@ header section div span{
 }
 
 .sectionContainer{
-    padding: 4px;
+    padding: 40px 20px;
     background-color: #05b2ff;
     color: white;
     text-align-last: center;
     margin: 20px 50px;
     border-radius: 50px;
+    transition: 0.2s;
+    
 }
+.sectionContainer:hover{
+    transition: 0.2s;
+    margin: 10px 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .sectionTitle{
     font-family: sans-serif;
+    margin: 0px;
 }
 
+.sectionContent{
+    font-family: cursive;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+}
+.sectionContentHitung{
+    align-self: start;
+    justify-items: start;
+}
+.sectionContentDetail{
+    justify-items: start;
+    display: flex;
+    flex-direction: row;
+}
+.sectionContentDetail ul{
+    list-style-type: none;
+    padding: 0;
+    justify-items: start;
+    margin: 5px 0px;
+}
+.sectionContentDetail div p{
+    margin: 5px 0px;
+}
+.sectionContentDetail div{
+    padding: 0px 10px;
+}
+input{
+    border-radius: 10px;
+}
+.sectionButton{
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin-top: 5px;
+    background-color: #008cc8;
+    color: #ffffff;
+    border: 0px;
+}
+.sectionButton:hover{
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
 
+footer{
+    background-color: #05b2ff;
+    padding: 15px 30px;
+    color: white;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 20px;
+}
+footer h2{
+    margin: 0px;
+}
+footer p{
+    margin: 0px;
+    padding: 0px;
+}
 
 
 
@@ -146,7 +205,50 @@ header section div span{
     .welcomeContainer{
         padding: 20px;
     }
+    .sectionContent{
+        margin-top: 20px;
+    }
 }
+@media(max-width:798px){
+    .sectionContainer{
+        padding: 20px 20px;
+        border-radius: 25px;
+    }
+    .sectionContainer:hover{
+        margin-top: 8px;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    .sectionContent{
+        padding: 0px 5px;
+        font-size: 14px;
+    }
+    
+    .sectionContentHitung h3{
+        font-size: 14px;
+        margin: 2px 0px;
+    }    
+    .sectionContentHitung form{
+        font-size: 13px;
+        margin: 2px 0px;
+    }
+    .sectionButton{
+        font-size: 13px;
+        padding: 4px 6px;
+    }
+    input{
+        width: 90px;
+        height: 10px;
+    }
+    .sectionContentDetail img{
+        max-width: 70px;
+        max-height: 70px;
+    }
+    .sectionContentDetail div p ,.sectionContentDetail div ul{
+        margin: 0px;
+    }
+}
+
 @media(max-width:680px){
     .welcomeTitle{
         font-size: 20px;
@@ -228,7 +330,55 @@ header section div span{
     .sectionTitle{
         font-size: 11px;
     }
+    .sectionContainer{
+        padding: 5px 20px;
+        border-radius: 25px;
+    }
+    .sectionContainer:hover{
+        margin-top: 8px;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    .sectionContent{
+        padding: 0px 5px;
+        font-size: 10px;
+    }
 
+    .sectionContentHitung h3{
+        font-size: 9px;
+        margin: 2px 0px;
+    }    
+    .sectionContentHitung form{
+        font-size: 9px;
+        margin: 2px 0px;
+    }
+    .sectionButton{
+        font-size: 9px;
+        padding: 3px 4px;
+    }
+    input{
+        width: 60px;
+        height: 10px;
+    }
+    .sectionContentDetail img{
+        max-width: 70px;
+        max-height: 70px;
+    }
+    .sectionContentDetail div p ,.sectionContentDetail div ul{
+        margin: 0px;
+    }
+   
+    footer h2{
+        font-size: 15px;
+    }
+    footer p{
+        font-size: 8px;
+    }
+    footer section a img{
+        max-width: 20px;
+        max-height: 20px;
+    }
+    
 }
 @media(max-width:390px){
     .welcomeDesc{
@@ -285,6 +435,47 @@ header section div span{
     .fitureNav>a:hover{
         font-size: 10px;
     }
-
+    .sectionContainer{
+        padding: 5px;
+    }
+    .sectionContainer:hover{
+        margin-top: 8px;
+        margin-right: 8px;
+        margin-left: 8px;
+    }
+    .sectionContent{
+        padding: 0px 5px;
+        display: flex;
+        flex-direction: column-reverse;
+        font-size: 9px;
+    }
+    .sectionContentHitung{
+        align-self: center;
+        justify-items: center;
+    }
+    .sectionContentHitung h3{
+        font-size: 9px;
+        margin: 2px 0px;
+    }    
+    .sectionContentHitung form{
+        font-size: 9px;
+        margin: 2px 0px;
+    }
+    .sectionButton{
+        font-size: 9px;
+        padding: 3px 4px;
+    }
+    input{
+        width: 70px;
+        height: 10px;
+    }
+    .sectionContentDetail img{
+        max-width: 70px;
+        max-height: 70px;
+    }
+    .sectionContentDetail div p ,.sectionContentDetail div ul{
+        margin: 0px;
+    }
+    
 }
 
