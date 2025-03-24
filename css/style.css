@@ -194,7 +194,14 @@ footer p{
     padding: 0px;
 }
 
-
+#hasilTampungLuas{
+    place-items: start;
+    font-size: 14px;
+}
+#hasilTampungKeliling{
+    place-items: start;
+    font-size: 14px;
+}
 
 @media(max-width:946px){
     .fitureNav>a{
@@ -221,6 +228,7 @@ footer p{
     }
     .sectionContent{
         padding: 0px 5px;
+        margin: 10px 0px;
         font-size: 14px;
     }
     
@@ -328,7 +336,7 @@ footer p{
         margin: 10px;
     }
     .sectionTitle{
-        font-size: 11px;
+        font-size: 20px;
     }
     .sectionContainer{
         padding: 5px 20px;
@@ -359,6 +367,7 @@ footer p{
     input{
         width: 60px;
         height: 10px;
+        font-size: 9px;
     }
     .sectionContentDetail img{
         max-width: 70px;
@@ -378,9 +387,19 @@ footer p{
         max-width: 20px;
         max-height: 20px;
     }
-    
+    #hasilTampungLuas{
+        place-items: start;
+        font-size: 10px;
+    }
+    #hasilTampungKeliling{
+        place-items: start;
+        font-size: 10px;
+    }
 }
 @media(max-width:390px){
+    .sectionTitle{
+        font-size: 11px;
+    }
     .welcomeDesc{
         font-size: 9px;
     }

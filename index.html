@@ -51,13 +51,15 @@
             <section class="sectionContent">
                 <div class="sectionContentHitung">
                     <h3>Hitung Luas Persegi</h3>
-                    <form action="">
+                    <section>
                         <div>
-                            <label for="sisi">Input Sisi: </label>
-                            <input type="number" name="sisi" id="sisi" required min="0">
+                            <label for="sisiLuas">Input Sisi: </label>
+                            <input type="number" name="sisiLuas" id="sisiLuas" required min="0">
                         </div>
-                        <button class="sectionButton">Hitung</button>
-                    </form>
+                        <button class="sectionButton" onclick="hitungLuas()">Hitung</button>
+                        <button class="sectionButton" onclick="resetFormLuas()">Reset</button>
+                        <div id="hasilTampungLuas"></div>
+                    </section>
                 </div>
                 <div class="sectionContentDetail">
                     <img class="responsivePhoto" src="assets/img/persegi.jpg" alt="Foto Welcome">
@@ -83,13 +85,15 @@
             <section class="sectionContent">
                 <div class="sectionContentHitung">
                     <h3>Hitung Keliling Persegi</h3>
-                    <form action="">
+                    <section>
                         <div>
-                            <label for="sisi">Input Sisi: </label>
-                            <input type="number" name="sisi" id="sisi" required min="0">
+                            <label for="sisiKeliling">Input Sisi: </label>
+                            <input type="number" name="sisiKeliling" id="sisiKeliling" required min="0">
                         </div>
-                        <button class="sectionButton">Hitung</button>
-                    </form>
+                        <button class="sectionButton" onclick="hitungKeliling()">Hitung</button>
+                        <button class="sectionButton" onclick="resetFormKeliling()">Reset</button>
+                        <div id="hasilTampungKeliling"></div>
+                    </section>
                 </div>
                 <div class="sectionContentDetail">
                     <img class="responsivePhoto" src="assets/img/persegi.jpg" alt="Foto Welcome">
