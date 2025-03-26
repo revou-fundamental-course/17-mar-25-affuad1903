@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body{
     margin: 0px;
     background-color: rgb(241, 241, 241);
@@ -45,6 +48,7 @@ header section div span{
     margin-top: 40px;
     margin-right: 50px;
     margin-left: 50px;
+    margin-bottom: 40px;
     transition: 0.2s;
     display: flex;
     flex-direction: row-reverse;
@@ -63,6 +67,7 @@ header section div span{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .responsivePhoto{
+    border-radius: 25px;
     object-fit: cover;
     height: 164px;
 }
@@ -193,14 +198,69 @@ footer p{
     margin: 0px;
     padding: 0px;
 }
-
+.containerHasil{
+    margin-top: 5px;
+    justify-items: center;
+    border-radius: 12px;
+    padding: 3px 0px;
+    background-color: #ffffff;
+}
 #hasilTampungLuas{
-    place-items: start;
     font-size: 14px;
+    color: black;
+    justify-items: flex-start;
 }
 #hasilTampungKeliling{
-    place-items: start;
+    justify-items: flex-start;
+    color: black;
     font-size: 14px;
+}
+#hasilTampungLuasPP{
+    font-size: 14px;
+    color: black;
+    justify-items: flex-start;
+    padding: 0px 10px;
+}
+#hasilTampungKelilingPP{
+    justify-items: flex-start;
+    color: black;
+    font-size: 14px;
+    padding: 0px 10px;
+}
+.unvisible{
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+.visible{
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+#persegiDisplay{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+#persegiPanjangDisplay{
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.containerForm{
+   display: flex; 
+}
+.labelPP{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+} 
+.inputPP{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 @media(max-width:946px){
@@ -216,11 +276,12 @@ footer p{
         margin-top: 20px;
     }
 }
-@media(max-width:798px){
+@media(max-width:839px){
     .sectionContainer{
         padding: 20px 20px;
         border-radius: 25px;
     }
+
     .sectionContainer:hover{
         margin-top: 8px;
         margin-right: 8px;
@@ -249,15 +310,13 @@ footer p{
         height: 10px;
     }
     .sectionContentDetail img{
-        max-width: 70px;
-        max-height: 70px;
+        width: fit-content;
+        max-height: 96px;
+        border-radius: 12px;
     }
     .sectionContentDetail div p ,.sectionContentDetail div ul{
         margin: 0px;
     }
-}
-
-@media(max-width:680px){
     .welcomeTitle{
         font-size: 20px;
     }
@@ -370,8 +429,8 @@ footer p{
         font-size: 9px;
     }
     .sectionContentDetail img{
-        max-width: 70px;
-        max-height: 70px;
+        max-width: fit-content;
+        max-height: 90px;
     }
     .sectionContentDetail div p ,.sectionContentDetail div ul{
         margin: 0px;
@@ -388,15 +447,20 @@ footer p{
         max-height: 20px;
     }
     #hasilTampungLuas{
-        place-items: start;
         font-size: 10px;
     }
     #hasilTampungKeliling{
-        place-items: start;
         font-size: 10px;
     }
+    #hasilTampungLuasPP{
+        font-size: 10px;
+    }
+    #hasilTampungKelilingPP{
+        font-size: 10px;
+    }
+
 }
-@media(max-width:390px){
+@media(max-width:451px){
     .sectionTitle{
         font-size: 11px;
     }
@@ -485,12 +549,13 @@ footer p{
         padding: 3px 4px;
     }
     input{
-        width: 70px;
+        width: 90px;
         height: 10px;
     }
     .sectionContentDetail img{
-        max-width: 70px;
+        max-width: fit-content;
         max-height: 70px;
+        border-radius: 9px;
     }
     .sectionContentDetail div p ,.sectionContentDetail div ul{
         margin: 0px;

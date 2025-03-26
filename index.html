@@ -7,7 +7,8 @@
 
     <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css">
-
+    <!-- JS External -->
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -35,81 +36,200 @@
 
                 <!-- Fiture Navigation -->
                 <div class="fitureNav">
-                    <a id="buttonPersegi" href="#persegi" class="nav-fiture-non-active" onclick="persegi(this)">Persegi</a>
-                    <a id="buttonPersegiPanjang" href="#persegiPanjang" class="nav-fiture-non-active" onclick="persegiPanjang(this)">Persegi Panjang</a>
+                    <a id="buttonPersegi" href="#scrolled" class="nav-fiture-non-active">Persegi</a>
+                    <a id="buttonPersegiPanjang" href="#scrolled" class="nav-fiture-non-active">Persegi Panjang</a>
                 </div>
                 <!-- /Fiture Navigation -->
             </div>
             <img class="responsivePhoto" src="assets/img/welcome.png" alt="Foto Welcome">
         </section>
         <!-- /Section Welcome -->
-        <!-- Section Luas -->
-        <section class="sectionContainer">
-            <header id="">
-                <h2 class="sectionTitle">Luas Persegi</h2>
-            </header>
-            <section class="sectionContent">
-                <div class="sectionContentHitung">
-                    <h3>Hitung Luas Persegi</h3>
-                    <section>
-                        <div>
-                            <label for="sisiLuas">Input Sisi: </label>
-                            <input type="number" name="sisiLuas" id="sisiLuas" required min="0">
-                        </div>
-                        <button class="sectionButton" onclick="hitungLuas()">Hitung</button>
-                        <button class="sectionButton" onclick="resetFormLuas()">Reset</button>
-                        <div id="hasilTampungLuas"></div>
-                    </section>
-                </div>
-                <div class="sectionContentDetail">
-                    <img class="responsivePhoto" src="assets/img/persegi.jpg" alt="Foto Welcome">
-                    <div>
-                        <p>Rumus Luas Persegi</p>
-                        <p>L = S x S</p>
-                        <ul>
-                            <li>Di mana :</li>
-                            <li>L = Luas</li>
-                            <li>S = Sisi</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </section>
-        <!-- /Section Luas -->
+        
+        <!-- Span untuk menangkap scroll saat button di pencet -->
+        <span id="scrolled"></span>
 
-        <!-- Section Keliling -->
-        <section class="sectionContainer">
-            <header id="">
-                <h2 class="sectionTitle">Keliling Persegi</h2>
-            </header>
-            <section class="sectionContent">
-                <div class="sectionContentHitung">
-                    <h3>Hitung Keliling Persegi</h3>
-                    <section>
-                        <div>
-                            <label for="sisiKeliling">Input Sisi: </label>
-                            <input type="number" name="sisiKeliling" id="sisiKeliling" required min="0">
-                        </div>
-                        <button class="sectionButton" onclick="hitungKeliling()">Hitung</button>
-                        <button class="sectionButton" onclick="resetFormKeliling()">Reset</button>
-                        <div id="hasilTampungKeliling"></div>
-                    </section>
-                </div>
-                <div class="sectionContentDetail">
-                    <img class="responsivePhoto" src="assets/img/persegi.jpg" alt="Foto Welcome">
-                    <div>
-                        <p>Rumus Keliling Persegi</p>
-                        <p>K = 4 x S</p>
-                        <ul>
-                            <li>Di mana :</li>
-                            <li>K = Keliling</li>
-                            <li>S = Sisi</li>
-                        </ul>
+        <!-- Div Untuk Display Persegi -->
+        <div id="persegiDisplay" class="unvisible">
+            <!-- Section Luas -->
+            <section class="sectionContainer">
+                <header>
+                    <h2 class="sectionTitle">Luas Persegi</h2>
+                </header>
+                <section class="sectionContent">
+                    <div class="sectionContentHitung">
+                        <h3>Hitung Luas</h3>
+                        <section>
+                            <div>
+                                <label for="sisiLuas">Input Sisi: </label>
+                                <input type="number" name="sisiLuas" id="sisiLuas" required min="0">
+                            </div>
+                            <button class="sectionButton" onclick="hitungLuasPersegi()">Hitung</button>
+                            <button class="sectionButton" onclick="resetFormLuasPersegi()">Reset</button>
+                            <div class="containerHasil">
+                                <div id="hasilTampungLuas" class="unvisible">
+                                    <p>L = S X S</p>
+                                    <p>L = S X S</p>
+                                    <p>L = </p>
+                                </div> 
+                            </div>
+                        </section>
                     </div>
-                </div>
+                    <div class="sectionContentDetail">
+                        <img class="responsivePhoto" src="assets/img/persegi.jpg" alt="Foto Persegi">
+                        <div>
+                            <p>Rumus Luas</p>
+                            <p>L = S x S</p>
+                            <ul>
+                                <li>Di mana :</li>
+                                <li>L = Luas</li>
+                                <li>S = Sisi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </section>
-        </section>
-        <!-- /Section Persegi -->
+            <!-- /Section Luas -->
+
+            <!-- Section Keliling -->
+            <section class="sectionContainer">
+                <header>
+                    <h2 class="sectionTitle">Keliling Persegi</h2>
+                </header>
+                <section class="sectionContent">
+                    <div class="sectionContentHitung">
+                        <h3>Hitung Keliling</h3>
+                        <section>
+                            <div>
+                                <label for="sisiKeliling">Input Sisi: </label>
+                                <input type="number" name="sisiKeliling" id="sisiKeliling" required min="0">
+                            </div>
+                            <button class="sectionButton" onclick="hitungKelilingPersegi()">Hitung</button>
+                            <button class="sectionButton" onclick="resetFormKelilingPersegi()">Reset</button>
+                            <div class="containerHasil">
+                                <div id="hasilTampungKeliling" class="unvisible">
+                                    <p>K = 4 X S</p>
+                                    <p>K = 4 X S</p>
+                                    <p>K = </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="sectionContentDetail">
+                        <img class="responsivePhoto" src="assets/img/persegi.jpg" alt="Foto Persegi">
+                        <div>
+                            <p>Rumus Keliling</p>
+                            <p>K = 4 x S</p>
+                            <ul>
+                                <li>Di mana :</li>
+                                <li>K = Keliling</li>
+                                <li>S = Sisi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <!-- /Section Keliling -->
+        </div>
+        <!-- /Div Untuk Display Persegi -->
+
+        <!-- Div Untuk Display Persegi Panjang-->
+        <div id="persegiPanjangDisplay" class="unvisible">
+            <!-- Section Luas -->
+            <section class="sectionContainer">
+                <header>
+                    <h2 class="sectionTitle">Luas Persegi Panjang</h2>
+                </header>
+                <section class="sectionContent">
+                    <div class="sectionContentHitung">
+                        <h3>Hitung Luas</h3>
+                        <section>
+                            <div class="containerForm">
+                                <div class="labelPP">
+                                    <label for="panjangPPLuas">Input Panjang: </label>
+                                    <label for="lebarPPLuas">Input Lebar: </label>
+                                </div>
+                                <div class="inputPP">
+                                    <input type="number" name="panjangPPLuas" id="panjangPPLuas" required min="0">
+                                    <input type="number" name="lebarPPLuas" id="lebarPPLuas" required min="0">
+                                </div>
+                            </div>
+                            <button class="sectionButton" onclick="hitungLuasPP()">Hitung</button>
+                            <button class="sectionButton" onclick="resetFormLuasPP()">Reset</button>
+                            <div class="containerHasil">
+                                <div id="hasilTampungLuasPP" class="unvisible">
+                                    <p>L = P X L</p>
+                                    <p>L = P X L</p>
+                                    <p>L = </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="sectionContentDetail">
+                        <img class="responsivePhoto" src="assets/img/persegiPanjang.webp" alt="Foto Persegi">
+                        <div>
+                            <p>Rumus Luas</p>
+                            <p>L = P X l</p>
+                            <ul>
+                                <li>Di mana :</li>
+                                <li>L = Luas</li>
+                                <li>P = Panjang</li>
+                                <li>l = Lebar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <!-- /Section Luas -->
+
+            <!-- Section Keliling -->
+            <section class="sectionContainer">
+                <header>
+                    <h2 class="sectionTitle">Keliling Persegi Panjang</h2>
+                </header>
+                <section class="sectionContent">
+                    <div class="sectionContentHitung">
+                        <h3>Hitung Keliling</h3>
+                        <section>
+                            <div class="containerForm">
+                                <div class="labelPP">
+                                    <label for="panjangPPKeliling">Input Panjang: </label>
+                                    <label for="lebarPPKeliling">Input Lebar: </label>
+                                </div>
+                                <div class="inputPP">
+                                    <input type="number" name="panjangPPKeliling" id="panjangPPKeliling" required min="0">
+                                    <input type="number" name="lebarPPKeliling" id="lebarPPKeliling" required min="0">
+                                </div>
+                            </div>
+                            <button class="sectionButton" onclick="hitungKelilingPP()">Hitung</button>
+                            <button class="sectionButton" onclick="resetFormKelilingPP()">Reset</button>
+                            <div class="containerHasil">
+                                <div id="hasilTampungKelilingPP" class="unvisible">
+                                    <p>L = P X L</p>
+                                    <p>L = P X L</p>
+                                    <p>L = </p>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="sectionContentDetail">
+                        <img class="responsivePhoto" src="assets/img/persegiPanjang.webp" alt="Foto Persegi">
+                        <div>
+                            <p>Rumus Keliling</p>
+                            <p>K = 2P + 2l</p>
+                            <ul>
+                                <li>Di mana :</li>
+                                <li>K = Keliling</li>
+                                <li>P = Panjang</li>
+                                <li>l = Lebar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <!-- /Section Keliling -->
+        </div>
+        <!-- /Div Section Keliling-->
+
     </main>
     <!-- /Main Content -->
 
@@ -124,7 +244,6 @@
     </footer>
     <!-- /Footer -->
 
-    <!-- JS External -->
-    <script src="js/script.js"></script>
+
 </body>
 </html>
