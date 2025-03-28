@@ -138,11 +138,12 @@ function hitungLuasPP(){
     let tampung = document.getElementById("hasilTampungLuasPP");
     // memanggil children element
     childTampung = tampung.children;
-    
-    if(checkPanjang.value && checkLebar.value){
-        let valuePanjang = document.getElementById('panjangPPLuas').value;
-        let valueLebar = document.getElementById('lebarPPLuas').value;
-        if(valuePanjang>valueLebar){
+    // memanggil value element
+    let valuePanjang = checkPanjang.value;
+    let valueLebar = checkLebar.value;
+
+    if(valuePanjang > valueLebar && valuePanjang !='' && valueLebar!=''){
+        if(tampung.classList.contains('unvisible')==true){
             let hitungLuas =valuePanjang * valueLebar;
             // mengubah teks sesuai dengan input user dan hasil jawaban
             childTampung[0].innerHTML = "L = P X l";
@@ -152,28 +153,61 @@ function hitungLuasPP(){
             tampung.classList.add('visible');
             tampung.classList.remove('unvisible');
         }else{
-            childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Nilai Panjang";
-            childTampung[0].innerHTML= "<br>"
-            childTampung[2].innerHTML= "<br>"
+            let hitungLuas =valuePanjang * valueLebar;
+            // mengubah teks sesuai dengan input user dan hasil jawaban
+            childTampung[0].innerHTML = "L = P X l";
+            childTampung[1].innerHTML = "L = " + valuePanjang + " X " + valueLebar;
+            childTampung[2].innerHTML =  "L = " + hitungLuas;
+        }
+    }else if(valuePanjang==0 && valueLebar==0){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
             tampung.classList.add('visible');
-        } 
-    }else if(checkPanjang.value==0 && checkLebar.value==0 && tampung.classList.contains('unvisible')==true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
-        tampung.classList.add('visible');
-    }else if(checkPanjang.value==0 && checkLebar.value==0 && tampung.classList.contains('visible')===true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
-    }else if(checkPanjang.value==0 && checkLebar.value && tampung.classList.contains('visible')===true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Panjang";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
-    }else if(checkPanjang.value && checkLebar.value==0 && tampung.classList.contains('visible')===true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Lebar";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
+    }else if(valuePanjang==0 && valueLebar){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+            tampung.classList.add('visible');
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
+
+    }else if(valuePanjang && valueLebar==0){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Lebar";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+            tampung.classList.add('visible');
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Lebar";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
+    }else if (valuePanjang < valueLebar && valuePanjang !='' && valueLebar!=''){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+            tampung.classList.add('visible');
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
     }
 }
 //function reset form luas persegi panjang
@@ -186,48 +220,82 @@ function resetFormLuasPP(){
 }
 
 // function hitung keliling persegi panjang
-function hitungKelilingPP(){
+function hitungKelilingPP(){    
     let checkPanjang = document.getElementById('panjangPPKeliling');
     let checkLebar = document.getElementById('lebarPPKeliling');
     let tampung = document.getElementById("hasilTampungKelilingPP");
     // memanggil children element
     childTampung = tampung.children;
-    
-    if(checkPanjang.value && checkLebar.value){
-        let valuePanjang = document.getElementById('panjangPPKeliling').value;
-        let valueLebar = document.getElementById('lebarPPKeliling').value;
-        if(valuePanjang>valueLebar){
-            let hitungLuas = 2 * valuePanjang + 2 * valueLebar;
+    // memanggil value element
+    let valuePanjang = checkPanjang.value;
+    let valueLebar = checkLebar.value;
+
+    if(valuePanjang > valueLebar && valuePanjang !='' && valueLebar!=''){
+        if(tampung.classList.contains('unvisible')==true){
+            let hitungKeliling = 2*valuePanjang + 2*valueLebar;
             // mengubah teks sesuai dengan input user dan hasil jawaban
-            childTampung[0].innerHTML = "L = 2P + 2l";
-            childTampung[1].innerHTML = "L = 2(" + valuePanjang + ") + 2(" + valueLebar + ")";
-            childTampung[2].innerHTML =  "L = " + hitungLuas;
+            childTampung[0].innerHTML = "K = 2P + 2L";
+            childTampung[1].innerHTML = "K = 2(" + valuePanjang + ") + 2(" + valueLebar+")";
+            childTampung[2].innerHTML =  "K = " + hitungKeliling;
             // mengubah opacity dengan mengganti class
             tampung.classList.add('visible');
             tampung.classList.remove('unvisible');
         }else{
-            childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Nilai Panjang";
-            childTampung[0].innerHTML= "<br>"
-            childTampung[2].innerHTML= "<br>"
+            let hitungKeliling = 2*valuePanjang + 2*valueLebar;
+            // mengubah teks sesuai dengan input user dan hasil jawaban
+            childTampung[0].innerHTML = "K = 2P + 2L";
+            childTampung[1].innerHTML = "K = 2(" + valuePanjang + ") + 2(" + valueLebar+")";
+            childTampung[2].innerHTML =  "K = " + hitungKeliling;
+        }
+    }else if(valuePanjang==0 && valueLebar==0){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
             tampung.classList.add('visible');
-        } 
-    }else if(checkPanjang.value==0 && checkLebar.value==0 && tampung.classList.contains('unvisible')==true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
-        tampung.classList.add('visible');
-    }else if(checkPanjang.value==0 && checkLebar.value==0 && tampung.classList.contains('visible')===true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
-    }else if(checkPanjang.value==0 && checkLebar.value && tampung.classList.contains('visible')===true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Panjang";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
-    }else if(checkPanjang.value && checkLebar.value==0 && tampung.classList.contains('visible')===true){
-        childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Lebar";
-        childTampung[0].innerHTML= "<br>"
-        childTampung[2].innerHTML= "<br>"
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
+    }else if(valuePanjang==0 && valueLebar){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+            tampung.classList.add('visible');
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
+
+    }else if(valuePanjang && valueLebar==0){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Lebar";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+            tampung.classList.add('visible');
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai Lebar";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
+    }else if (valuePanjang < valueLebar && valuePanjang !='' && valueLebar!=''){
+        if(tampung.classList.contains('unvisible')==true){
+            childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+            tampung.classList.add('visible');
+            tampung.classList.remove('unvisible');
+        }else{
+            childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Panjang";
+            childTampung[0].innerHTML= "<br>";
+            childTampung[2].innerHTML= "<br>";
+        }
     }
 }
 // function reset form keliling persegi panjang
