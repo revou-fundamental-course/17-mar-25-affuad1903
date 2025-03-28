@@ -141,7 +141,7 @@ header section div span{
 }
 
 .sectionContent{
-    font-family: cursive;
+    font-family: sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
