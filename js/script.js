@@ -196,7 +196,7 @@ function hitungLuasPP(){
             childTampung[0].innerHTML= "<br>";
             childTampung[2].innerHTML= "<br>";
         }
-    }else if (valuePanjang < valueLebar && valuePanjang !='' && valueLebar!=''){
+    }else if (valuePanjang <= valueLebar && valuePanjang !='' && valueLebar!=''){
         if(tampung.classList.contains('unvisible')==true){
             childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Panjang";
             childTampung[0].innerHTML= "<br>";
@@ -284,7 +284,7 @@ function hitungKelilingPP(){
             childTampung[0].innerHTML= "<br>";
             childTampung[2].innerHTML= "<br>";
         }
-    }else if (valuePanjang < valueLebar && valuePanjang !='' && valueLebar!=''){
+    }else if (valuePanjang <= valueLebar && valuePanjang !='' && valueLebar!=''){
         if(tampung.classList.contains('unvisible')==true){
             childTampung[1].innerHTML = "Nilai Lebar Tidak Boleh Lebih Atau Sama Dari Panjang";
             childTampung[0].innerHTML= "<br>";
