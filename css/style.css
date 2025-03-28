@@ -209,11 +209,13 @@ footer p{
     font-size: 14px;
     color: black;
     justify-items: flex-start;
+    padding: 0px 10px;
 }
 #hasilTampungKeliling{
     justify-items: flex-start;
     color: black;
     font-size: 14px;
+    padding: 0px 10px;
 }
 #hasilTampungLuasPP{
     font-size: 14px;

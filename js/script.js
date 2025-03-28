@@ -65,7 +65,7 @@ function hitungLuasPersegi(){
     let tampung = document.getElementById("hasilTampungLuas");
     // memanggil children element
     childTampung = tampung.children;
-    if(checkSisi.value){
+    if(checkSisi.value!=0){
         let valueSisi = document.getElementById('sisiLuas').value;
         let hitungLuas = valueSisi*valueSisi;
         // mengubah teks sesuai dengan input user dan hasil jawaban
@@ -76,12 +76,13 @@ function hitungLuasPersegi(){
         tampung.classList.add('visible');
         tampung.classList.remove('unvisible');
         
-    }else if(checkSisi.value==0 && tampung.classList.contains('unvisible')===true){
+    }else if(checkSisi.value==0 || checkSisi.value==''  && tampung.classList.contains('unvisible')===true){
         childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
         childTampung[0].innerHTML= "<br>"
         childTampung[2].innerHTML= "<br>"
         tampung.classList.add('visible');
-    }else if(checkSisi.value==0 && tampung.classList.contains('visible')===true){
+        tampung.classList.remove('unvisible');
+    }else if(checkSisi.value==0 || checkSisi.value=='' &&tampung.classList.contains('visible')===true){
         childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
         childTampung[0].innerHTML= "<br>"
         childTampung[2].innerHTML= "<br>"
@@ -102,7 +103,7 @@ function hitungKelilingPersegi(){
     // memanggil children element
     childTampung = tampung.children;
 
-    if(checkSisi.value){
+    if(checkSisi.value!=0){
         let valueSisi = document.getElementById('sisiKeliling').value;
         let hitungKeliling = 4 *valueSisi;
         // mengubah teks sesuai dengan input user dan hasil jawaban
@@ -112,12 +113,12 @@ function hitungKelilingPersegi(){
         // mengubah opacity dengan mengganti class
         tampung.classList.add('visible');
         tampung.classList.remove('unvisible');
-    }else if(checkSisi.value==0 && tampung.classList.contains('unvisible')===true){
+    }else if(checkSisi.value==0 || checkSisi.value=='' && tampung.classList.contains('unvisible')===true){
         childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
         childTampung[0].innerHTML= "<br>"
         childTampung[2].innerHTML= "<br>"
         tampung.classList.add('visible');
-    }else if(checkSisi.value==0 && tampung.classList.contains('visible')===true){
+    }else if(checkSisi.value==0 || checkSisi.value=='' && tampung.classList.contains('visible')===true){
         childTampung[1].innerHTML = "Anda Harus Memasukkan Nilai";
         childTampung[0].innerHTML= "<br>"
         childTampung[2].innerHTML= "<br>"
