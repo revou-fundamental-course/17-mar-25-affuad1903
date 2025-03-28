@@ -251,11 +251,13 @@ footer p{
 
 .containerForm{
    display: flex; 
+   justify-content: center;
 }
 .labelPP{
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
 } 
 .inputPP{
     display: flex;
